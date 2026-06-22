@@ -54,6 +54,16 @@ document.addEventListener("DOMContentLoaded", function() {
     let screen = document.getElementById('cover-screen');
     // Ngecek kalau amplopnya dihapus atau di-display: none
     if (!screen || window.getComputedStyle(screen).display === 'none' || screen.classList.contains('fade-out-cover')) {
+        
+        // MUNCULKAN TOMBOL MUSIK
+        let musicBtn = document.getElementById('musicBtn');
+        if (musicBtn) {
+            musicBtn.style.opacity = '1'; 
+            musicBtn.style.pointerEvents = 'auto';
+            // Sengaja tidak di-play otomatis di sini, karena browser sering memblokir autoplay tanpa interaksi user.
+            // Biarkan user mengklik play sendiri.
+        }
+
         setTimeout(() => {
             let hero = document.getElementById('main-content');
             if (hero) hero.classList.add('start-anim');
