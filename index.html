@@ -17,16 +17,26 @@
 
     <!-- 1. 3D ENVELOPE (COVER) -->
     <!-- AKTIFKAN AMPLOP -->
-    <div id="cover-screen" style="display: none;">
+    <div id="cover-screen">
         <div class="envelope-wrapper" id="envelope" onclick="openEnvelopeFlap()">
             <div class="envelope-back"></div>
             <div class="envelope-paper">
                 <div class="paper-content-inner">
-                    <p class="text-uppercase font-serif paper-title" style="color: var(--primary-color);">Tasyakuran Khitanan</p>
-                    <h2 class="font-serif paper-names" style="color: var(--dark-color);">Muhammad Rasya Putra Priyatna</h2>
-                    <div class="divider small"></div>
-                    <p class="text-muted small mb-3">Kepada Yth. Bapak/Ibu/Saudara/i</p>
-                    <button class="btn-buka-surat" onclick="event.stopPropagation(); enterWebsite();">
+                    <!-- Margin bawah (mb) diperkecil -->
+                    <p class="text-uppercase font-serif paper-title mb-1" style="color: var(--primary-color);">Tasyakuran Khitanan</p>
+                    
+                    <!-- Hierarki Nama di Kertas Amplop (Ukuran Font & Margin Disesuaikan) -->
+                    <h2 class="names mb-2" style="color: var(--dark-color); line-height: 1.1;">
+                        <span class="d-block fw-normal" style="font-size: clamp(1rem, 2.5vw, 1.2rem);">Muhammad</span>
+                        <span class="d-block fw-bold" style="font-size: clamp(1.8rem, 4.5vw, 2.5rem); letter-spacing: 2px; margin: 2px 0;">RASYA</span>
+                        <span class="d-block fw-normal" style="font-size: clamp(1rem, 2.5vw, 1.2rem);">Putra Priyatna</span>
+                    </h2>
+
+                    <!-- Margin vertikal (my) diperkecil -->
+                    <div class="divider small my-2"></div>
+                    <p class="text-muted small mb-2">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+                    
+                    <button class="btn-buka-surat mt-2" onclick="event.stopPropagation(); enterWebsite();">
                         <i class="fas fa-envelope-open-text me-2"></i> Buka Undangan
                     </button>
                 </div>
@@ -34,7 +44,13 @@
             <div class="envelope-front-left"></div>
             <div class="envelope-front-right"></div>
             <div class="envelope-front-bottom"></div>
-            <div class="envelope-flap"><div class="wax-seal">R</div></div>
+            
+            <!-- Perbaikan Stempel Amplop (Dipisah dari clip-path) -->
+            <div class="envelope-flap">
+                <div class="flap-shape"></div>
+                <div class="wax-seal">R</div>
+            </div>
+
             <div class="click-guide font-serif"><i class="fas fa-hand-pointer me-2"></i>Klik segel untuk membuka</div>
         </div>
     </div>
@@ -44,7 +60,7 @@
         <i class="fas fa-compact-disc"></i>
     </div>
     <audio id="bgMusic" loop>
-        <source src="https://music.apple.com/eg/song/thank-you-allah/335438989" type="audio/mpeg">
+        <source src="assets/audio/lagu-1.mpeg" type="audio/mpeg">
     </audio>
 
     <!-- 2. HERO SECTION (TEMA KHITANAN ISLAMI) -->
